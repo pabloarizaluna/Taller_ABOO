@@ -87,14 +87,21 @@ int init_PQ(std::string file_path, std::vector<float> &P, std::vector<float> &Q,
   std::vector< std::string > tokens = tokenize( buffer, "[^a-zA-Z0-9]+" );
 
   int num_words = std::stoi(tokens.front());
+  float acum_p = 0, acum_q = 0;
   tokens.erase(tokens.begin());
 
   for( int i = 0; i < tokens.size(); i+=2 )
   {
     datos.push_back(tokens[i]);
     P.push_back(std::stof(tokens[i + 1]) / (num_words * 2.0));
-    Q.push_back(0.5 / (num_words + 1));
+    acum_p += P.back();
   }
 
+  Q = std::vector<float>(P.size() + 1, 0.5 / (static_cast<float>(P.size()) + 1.0));
+  for( float i : Q )
+    acum_q += i;
+  
+  std::cout << "Acum P: " << acum_p << std::endl;
+  std::cout << "Acum Q: " << acum_q << std::endl;
   input_file.close();
 }
