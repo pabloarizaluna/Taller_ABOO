@@ -13,6 +13,7 @@ public:
   OptBinNode();
   OptBinNode( T );
   OptBinNode( T, T, T );
+  void preOrden( );
 
   T getFact();
   OptBinNode< T >* getLeft();

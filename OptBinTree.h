@@ -9,22 +9,22 @@
 template< class T >
 class OptBinTree
 {
-private:
-  OptBinNode< T > *root_ptr;
+  private:
+      OptBinNode< T > *root_ptr;
 
-  OptBinNode< T >* insert_helper( OptBinNode< T >**, T& );
+      OptBinNode< T >* insert_helper( OptBinNode< T >**, T& );
 
-public:
-  OptBinTree();
-  OptBinTree( T );
+  public:
+      OptBinTree();
+      OptBinTree( T );
 
-  bool insert( T& );
-  bool is_empty();
-  OptBinNode< T >* find( T& );
+      void preOrden();
+      bool insert( T& );
+      bool is_empty();
+      OptBinNode< T >* find( T& );
 
-  std::list< OptBinNode< T >* > nivelOrden();
+      std::list< OptBinNode< T >* > nivelOrden();
 };
 
 #include "OptBinTree.hxx"
-
 #endif
