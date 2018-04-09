@@ -10,4 +10,5 @@ endif(PROJECT_BINARY_DIR STREQUAL ${PROJECT_SOURCE_DIR})
 # the search paths
 include_directories(${PROJECT_SOURCE_DIR}/include/)
 
-add_executable(test.exe ${PROJECT_SOURCE_DIR}/src/main.cxx ${PROJECT_SOURCE_DIR}/src/Build_OptBinTree.cxx)
+add_executable(opt_bin_tree ${PROJECT_SOURCE_DIR}/src/main.cxx ${PROJECT_SOURCE_DIR}/src/Build_OptBinTree.cxx)
+add_executable(my_fancy_executable ${PROJECT_SOURCE_DIR}/src/build_histogram.cxx)
