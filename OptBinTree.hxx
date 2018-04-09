@@ -79,10 +79,7 @@ bool OptBinTree< T >::insert( T &fact )
         this->root_ptr = new OptBinNode< T >( fact );
         return true;
 }
-template< class T >
-void OptBinTree<T>::preOrden(){
-        this->root_ptr->preOrden();
-}
+
 template< class T >
 std::list< OptBinNode< T >* > OptBinTree< T >::nivelOrden()
 {

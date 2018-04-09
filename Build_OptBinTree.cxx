@@ -1,6 +1,8 @@
 #include "Build_OptBinTree.h"
 
-std::vector<std::vector<int>> Build_OptBinTree(std::vector<float> P, std::vector<float> Q)
+std::vector<std::vector<int>> Build_OptBinTree(
+  std::vector<float> P, std::vector<float> Q
+  )
 {
   std::vector<int> aux_int(P.size(), 0);
   std::vector<float> aux_float(P.size(), 0.0);
@@ -38,4 +40,17 @@ std::vector<std::vector<int>> Build_OptBinTree(std::vector<float> P, std::vector
   }
 
   return R;
+}
+
+OptBinTree< std::string > BruteForceBackTracking(
+  std::vector< std::vector< int > > &R, std::vector< std::string > &datos
+  )
+{
+  OptBinTree< std::string > tree  = OptBinTree< std::string >();
+
+  for (int i = 1; i < R.size(); i++)
+    for (int j = R.size()-1; j >=  i; j--)
+      tree.insert(datos[R[i][j] - 1]);
+
+  return tree;
 }

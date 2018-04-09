@@ -18,7 +18,6 @@ class OptBinTree
       OptBinTree();
       OptBinTree( T );
 
-      void preOrden();
       bool insert( T& );
       bool is_empty();
       OptBinNode< T >* find( T& );

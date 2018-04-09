@@ -47,22 +47,7 @@ void OptBinNode< T >::setLeft( T fact )
 {
         this->left_ptr = new OptBinNode< T >( fact );
 }
-template< class T >
-void OptBinNode< T >::preOrden() {
-        std::cout<<this->getFact()<<std::endl;
 
-        if(this->getLeft() != nullptr ) {
-                std::cout<<"a izquierda ";
-                this->getLeft()->preOrden();
-
-        }
-
-        if(this->getRigth() != nullptr) {
-                std::cout<<"a derecha ";
-                this->getRigth()->preOrden();
-
-        }
-}
 template< class T >
 void OptBinNode< T >::setRigth( T fact )
 {

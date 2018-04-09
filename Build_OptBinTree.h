@@ -4,6 +4,13 @@
 #include <vector>
 #include <limits>
 
-std::vector<std::vector<int>> Build_OptBinTree(std::vector<float> P, std::vector<float> Q);
+#include "OptBinTree.h"
+
+std::vector< std::vector< int > > Build_OptBinTree(
+  std::vector< float > P, std::vector< float > Q
+  );
+OptBinTree< std::string > BruteForceBackTracking( 
+  std::vector< std::vector< int > > &R, std::vector< std::string > &datos
+  );
 
 #endif

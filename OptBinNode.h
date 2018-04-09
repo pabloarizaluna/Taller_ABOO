@@ -1,6 +1,8 @@
 #ifndef __OPTBINNODE_H__
 #define __OPTBINNODE_H__
 
+#include <iostream>
+
 template<class T>
 class OptBinNode
 {
@@ -13,7 +15,6 @@ public:
   OptBinNode();
   OptBinNode( T );
   OptBinNode( T, T, T );
-  void preOrden( );
 
   T getFact();
   OptBinNode< T >* getLeft();
