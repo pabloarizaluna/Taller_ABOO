@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass article
 \begin_preamble
 \usepackage{algorithm}
@@ -13,16 +15,18 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -52,6 +56,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -67,7 +72,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language french
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -79,6 +87,93 @@
 \end_header
 
 \begin_body
+
+\begin_layout Title
+Taller Arboles Binarios Optimos
+\end_layout
+
+\begin_layout Author
+Pablo Ariza - Santiago Chaustre
+\end_layout
+
+\begin_layout Date
+Abril 9 del 2018
+\end_layout
+
+\begin_layout Section
+Problema
+\end_layout
+
+\begin_layout Standard
+En los arboles binarios ordenados los elementos son estrictamente ordenados
+ con una relación de comparación 
+\begin_inset Formula $<$
+\end_inset
+
+ y si estós son equilibrados los arboles tienden a ser equivalentes con
+ un mismo conjunto de datos haciendo que todas las busquedas tengan una
+ complejidad 
+\begin_inset Formula $O(\log n)$
+\end_inset
+
+.
+ Los arboles binarios ordenados optimos tienden a dejar los datos más buscados
+ de un conjunto de datos lo más cerca de la raiz, esto para que los tiempos
+ de respuesta sean más rapido en los casos 
+\begin_inset Quotes cld
+\end_inset
+
+generales
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Formalizacion
+\end_layout
+
+\begin_layout Subsection
+Entradas
+\end_layout
+
+\begin_layout Standard
+Un histograma 
+\begin_inset Formula $h\left(c\right):\mathbb{{E}}\longrightarrow\left[0,1\right]$
+\end_inset
+
+ que representa la probabilidad (o frecuencia) de la búsqueda de un código
+ 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Salidas
+\end_layout
+
+\begin_layout Standard
+Una secuencia 
+\begin_inset Formula $S=\{(n,t)|(n\in\mathbb{N})\wedge(t\in\mathbb{R})\}$
+\end_inset
+
+ donde 
+\begin_inset Formula $n$
+\end_inset
+
+ es el tamaño de las busquedas realizadas y 
+\begin_inset Formula $t$
+\end_inset
+
+ el tiempo que se demoro realizando las 
+\begin_inset Formula $n$
+\end_inset
+
+ busquedas.
+\end_layout
 
 \begin_layout Section
 Estructura óptima del problema
@@ -278,7 +373,7 @@ end{algorithm}
 \end_layout
 
 \begin_layout Standard
------------------------------------------------------------
+———————————————————–
 \end_layout
 
 \begin_layout Standard
@@ -628,12 +723,9 @@ status open
 \end_inset
 
 
-
 \begin_inset Formula $v<e$
 \end_inset
 
-
-\lang spanish
 
 \begin_inset ERT
 status open
@@ -787,7 +879,7 @@ end{algorithm}
 \end_layout
 
 \begin_layout Standard
------------------------------------------------------------
+———————————————————–
 \end_layout
 
 \begin_layout Standard
@@ -970,7 +1062,6 @@ State
 \end_inset
 
 
-
 \begin_inset Formula $w\leftarrow w+P\left[l\right]+Q\left[l\right]$
 \end_inset
 
@@ -1065,11 +1156,11 @@ end{algorithm}
 
 \begin_layout Section
 Algoritmo recurrente 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 memoizado
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 
@@ -1550,7 +1641,7 @@ end{algorithm}
 \end_layout
 
 \begin_layout Standard
------------------------------------------------------------
+———————————————————–
 \end_layout
 
 \begin_layout Standard
@@ -1904,12 +1995,9 @@ status open
 \end_inset
 
 
-
 \begin_inset Formula $v<M\left[i,j\right]$
 \end_inset
 
-
-\lang spanish
 
 \begin_inset ERT
 status open
@@ -2087,13 +2175,17 @@ end{algorithm}
 
 \begin_layout Standard
 La tabla de memoización tiene la siguiente forma:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="7">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -2716,13 +2808,17 @@ Y
 \end_inset
 
  puede ser pre-calculado:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="6">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -3182,11 +3278,11 @@ Y
 
 \begin_layout Section
 Algoritmo 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 bottom-up
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  con la solución
@@ -3669,7 +3765,6 @@ status open
 \end_inset
 
 
-
 \begin_inset Formula $l\leftarrow1$
 \end_inset
 
@@ -3681,8 +3776,6 @@ to
 \begin_inset Formula $\left|P\right|$
 \end_inset
 
-
-\lang spanish
 
 \begin_inset ERT
 status open
@@ -3722,7 +3815,6 @@ status open
 \end_inset
 
 
-
 \begin_inset Formula $i\leftarrow1$
 \end_inset
 
@@ -3734,8 +3826,6 @@ to
 \begin_inset Formula $\left|P\right|-l+1$
 \end_inset
 
-
-\lang spanish
 
 \begin_inset ERT
 status open
@@ -3795,7 +3885,6 @@ status open
 \end_inset
 
 
-
 \begin_inset Formula $r\leftarrow i$
 \end_inset
 
@@ -3807,8 +3896,6 @@ to
 \begin_inset Formula $j$
 \end_inset
 
-
-\lang spanish
 
 \begin_inset ERT
 status open
@@ -3868,12 +3955,9 @@ status open
 \end_inset
 
 
-
 \begin_inset Formula $v<M\left[i,j\right]$
 \end_inset
 
-
-\lang spanish
 
 \begin_inset ERT
 status open
@@ -4060,6 +4144,27 @@ end{algorithm}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Invariante
+\end_layout
+
+\begin_layout Standard
+La invariante del bottom up es recorrer la tabal e ir llenandola con el
+ minimo de la suma de las probabilidades de exito y de desborde.
+\end_layout
+
+\begin_layout Section
+Resultado
+\end_layout
+
+\begin_layout Section
+Manual de compilacion
+\end_layout
+
+\begin_layout Standard
+Leer el readme.md para compilar y ejecutar el codigo.
 \end_layout
 
 \end_body

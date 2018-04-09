@@ -32,7 +32,7 @@ make -j3
 ./my_fancy_executable input_file output_file
 ```
 
-2. Now run opt_bin_tree
+2. Now run opt_bin_tree with a .csv file
 ```
 ./opt_bin_tree input_file time_to_find(seconds)
 ```
