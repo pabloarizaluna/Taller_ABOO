@@ -1,7 +1,3 @@
-/*
- * Compilation: g++ -std=c++11 build_histogram.cxx -o my_fancy_executable
- */
-
 #include <algorithm>
 #include <fstream>
 #include <iostream>
@@ -39,7 +35,7 @@ int main( int argc, char* argv[] )
 
   } // fi
   std::string buffer;
-  input_file.seekg( 0, std::ios::end );   
+  input_file.seekg( 0, std::ios::end );
   buffer.reserve( input_file.tellg( ) );
   input_file.seekg( 0, std::ios::beg );
   buffer.assign(
