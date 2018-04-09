@@ -152,7 +152,7 @@ int init_PQ(
 
 int init_dicc( std::vector< std::string >& dicc )
 {
-  std::ifstream input_file( "diccionario.txt" );
+  std::ifstream input_file( "../texts/diccionario.txt" );
   if( !input_file.is_open( ) )
   {
           std::cerr << "Invalid input file." << std::endl;
